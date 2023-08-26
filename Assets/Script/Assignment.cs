@@ -36,17 +36,17 @@ public class NewBehaviourScript : MonoBehaviour
 
     void CheckHealth()
     {
-        if (playerHealth >= 100.0f)
-        {
+        switch (playerHealth)
+    {
+        case float h when h >= 100.0f:
             Debug.Log(playerName + " is in perfect health!");
-        }
-        else if (playerHealth >= 50.0f)
-        {
+            break;
+        case float h when h >= 50.0f:
             Debug.Log(playerName + " is wounded but still fighting.");
-        }
-        else
-        {
+            break;
+        default:
             Debug.Log(playerName + " is critically injured.");
+            break;
         }
     }
 
